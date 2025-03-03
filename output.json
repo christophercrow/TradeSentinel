@@ -1,3 +1,110 @@
 [
-
+{
+    "time": "Roger WilliamsRepublicanHouseTX",
+    "politician": "CANEY CREEK MUNICIPAL UTILITY DISTRICT TEXASN/A",
+    "trade_date": "09:05Today",
+    "ticker": "18 Feb2025",
+    "trade_type": "days10",
+    "amount": "Undisclosed",
+    "source": "sell"
+},
+{
+    "time": "Mark GreenRepublicanHouseTN",
+    "politician": "NGL Energy Partners LPNGL:US",
+    "trade_date": "09:05Today",
+    "ticker": "17 Feb2025",
+    "trade_type": "days10",
+    "amount": "Joint",
+    "source": "sell"
+},
+{
+    "time": "Mark GreenRepublicanHouseTN",
+    "politician": "OUNZ VAN ECK GOLD TRUST ETFN/A",
+    "trade_date": "09:05Today",
+    "ticker": "17 Feb2025",
+    "trade_type": "days10",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Mark GreenRepublicanHouseTN",
+    "politician": "OUNZ VAN ECK GOLD TRUST ETFN/A",
+    "trade_date": "09:05Today",
+    "ticker": "19 Feb2025",
+    "trade_type": "days8",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Markwayne MullinRepublicanSenateOK",
+    "politician": "Westinghouse Air Brake Technologies CorpWAB:US",
+    "trade_date": "27 Feb2025",
+    "ticker": "2 Feb2025",
+    "trade_type": "days24",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Markwayne MullinRepublicanSenateOK",
+    "politician": "Primo Water CorpPRMW:US",
+    "trade_date": "27 Feb2025",
+    "ticker": "2 Feb2025",
+    "trade_type": "days24",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Markwayne MullinRepublicanSenateOK",
+    "politician": "MasTec IncMTZ:US",
+    "trade_date": "27 Feb2025",
+    "ticker": "2 Feb2025",
+    "trade_type": "days24",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Markwayne MullinRepublicanSenateOK",
+    "politician": "Stride IncLRN:US",
+    "trade_date": "27 Feb2025",
+    "ticker": "2 Feb2025",
+    "trade_type": "days24",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Markwayne MullinRepublicanSenateOK",
+    "politician": "Iron Mountain IncIRM:US",
+    "trade_date": "27 Feb2025",
+    "ticker": "2 Feb2025",
+    "trade_type": "days24",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Markwayne MullinRepublicanSenateOK",
+    "politician": "The Goldman Sachs Group IncGS:US",
+    "trade_date": "27 Feb2025",
+    "ticker": "2 Feb2025",
+    "trade_type": "days24",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Markwayne MullinRepublicanSenateOK",
+    "politician": "Dell Technologies IncDELL:US",
+    "trade_date": "27 Feb2025",
+    "ticker": "2 Feb2025",
+    "trade_type": "days24",
+    "amount": "Joint",
+    "source": "buy"
+},
+{
+    "time": "Markwayne MullinRepublicanSenateOK",
+    "politician": "CREDO TECH GROUP HOLDING LTDN/A",
+    "trade_date": "27 Feb2025",
+    "ticker": "2 Feb2025",
+    "trade_type": "days24",
+    "amount": "Joint",
+    "source": "buy"
+}
 ]

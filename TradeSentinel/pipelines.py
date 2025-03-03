@@ -1,47 +1,33 @@
-from datetime import datetime
 from scrapy.exceptions import DropItem
 
 class DataCleaningPipeline:
     def __init__(self):
-        # Track seen item titles to remove duplicates
-        self.seen_titles = set()
+        # Use a set to track already seen items using a composite key
+        self.seen = set()
 
     def process_item(self, item, spider):
-        # Clean whitespace in all string fields
-        for field, value in item.items():
+        # Clean whitespace from all string fields
+        for key, value in item.items():
             if isinstance(value, str):
-                item[field] = value.strip()
+                item[key] = value.strip()
 
-        # Drop duplicate items based on title (or another unique identifier)
-        title = item.get('title')
-        if title:
-            if title in self.seen_titles:
-                spider.logger.info(f"Duplicate item dropped: {title}")
-                raise DropItem(f"Duplicate item found: {title}")
-            self.seen_titles.add(title)
+        # (Optional) Further normalization—for example, splitting combined fields—
+        # you can adjust the following if needed:
+        #
+        # if item.get("time"):
+        #     # For instance, if the time cell sometimes concatenates multiple pieces,
+        #     # you might split them here.
+        #     parts = item["time"].split()
+        #     item["time"] = parts[0] if parts else item["time"]
 
-        # Standardize date format to YYYY-MM-DD if a date field exists
-        date_str = item.get('date')
-        if date_str:
-            parsed_date = None
-            # Try multiple date formats for flexibility
-            for fmt in ("%B %d, %Y", "%Y-%m-%d", "%d %b %Y"):
-                try:
-                    parsed_date = datetime.strptime(date_str, fmt)
-                    break
-                except ValueError:
-                    continue
-            if parsed_date:
-                item['date'] = parsed_date.strftime("%Y-%m-%d")
-            else:
-                spider.logger.error(f"Invalid date format for item '{title}': {date_str}")
-                raise DropItem(f"Invalid date format for item: {title}")
-
-        # Validate required fields (e.g., title and date must be present)
-        if not item.get('title') or not item.get('date'):
-            spider.logger.error(f"Missing required fields in item: {item}")
-            raise DropItem(f"Missing required fields in item: {item}")
-
-        # If all validations pass, log and return the clean item
-        spider.logger.info(f"Item passed validation: {item.get('title')}")
+        # Create a composite key using a few fields
+        unique_key = (
+            item.get("time"),
+            item.get("politician"),
+            item.get("trade_date"),
+            item.get("ticker"),
+        )
+        if unique_key in self.seen:
+            raise DropItem(f"Duplicate item found: {unique_key}")
+        self.seen.add(unique_key)
         return item
